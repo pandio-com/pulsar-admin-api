@@ -6,16 +6,16 @@ import (
 	"log"
 	"testing"
 
-	swagger "github.com/pandio-com/pulsar-admin-api/client"
+	pulsar "github.com/pandio-com/pulsar-admin-api/client"
 )
 
 func TestClient(t *testing.T) {
-	client := swagger.NewAPIClient(&swagger.Configuration{
-		BasePath:      "http://localhost:8080/admin/v2",
+	c := pulsar.NewAPIClient(&pulsar.Configuration{
+		BasePath:      "http://localhost:7000/admin/v2",
 		DefaultHeader: make(map[string]string),
 		UserAgent:     "Swagger-Codegen/1.0.0/go",
 	})
-	clusters, _, err := client.ClustersApi.GetClusters(context.Background())
+	clusters, _, err := c.ClustersApi.GetClusters(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
