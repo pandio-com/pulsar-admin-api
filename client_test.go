@@ -6,7 +6,7 @@ import (
 	"log"
 	"testing"
 
-	swagger "github.com/pandio-com/pulsar-management-service/pkg/pulsar/client"
+	swagger "github.com/pandio-com/pulsar-admin-api/client"
 )
 
 func TestClient(t *testing.T) {
